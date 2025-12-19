@@ -1,0 +1,458 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+
+:root {
+    --span-color: #7f22fe;
+    --blue0color: #5937f8;
+    --gray-head-text: #6a7282;
+    --navBg-color: #fdfefe;
+    --starColor: #ffb900;
+    --heartColor: #ff3163;
+    --inputs_color: #f3f4f6;
+}
+
+nav {
+    /* position: fixed; */
+    /* top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    opacity: 0.9; */
+}
+
+/* .theContant {
+    transform: translateY(4%);
+    -webkit-transform: translateY(4%);
+    -moz-transform: translateY(4%);
+    -ms-transform: translateY(4%);
+    -o-transform: translateY(4%);
+} */
+
+.lh-6 {
+    line-height: 6px;
+}
+
+.star-color {
+    color: var(--starColor);
+}
+
+.bg-star {
+    background-color: var(--starColor);
+}
+
+.bg-heart {
+    background-color: var(--heartColor);
+}
+
+.heart-color {
+    color: var(--heartColor);
+}
+
+.bg-blue {
+    background-color: var(--blue0color);
+}
+
+.gray-head {
+    color: var(--gray-head-text);
+}
+
+.sp-color {
+    color: var(--span-color);
+}
+
+.nav-bg-color {
+    background-color: var(--navBg-color);
+}
+
+.bg-color-cam {
+    background-color: var(--inputs_color);
+}
+
+.inputs-effect:hover {
+    background: var(--inputs_color);
+}
+
+.heart-effect:hover {
+    color: var(--heartColor);
+}
+
+.w-fit {
+    width: fit-content;
+}
+
+.img-3 {
+    width: 3%;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.bg-hover:hover {
+    background-color: #f1eded;
+}
+
+.add-button-effect:hover {
+    transform: translateY(-3px);
+    -webkit-transform: translateY(-3px);
+    -moz-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    -o-transform: translateY(-3px);
+    box-shadow: 0 2px 6px rgba(0, 123, 255, 0.25);
+}
+
+.close-btn {
+    background-color: transparent;
+    border: none;
+}
+
+.cancel {
+    background-color: var(--inputs_color);
+}
+
+.cancel:hover {
+    background-color: #d3d4d4;
+}
+
+.save, .update {
+    background-image: linear-gradient(to right, #8023fe , #5039f6);
+}
+
+.save:hover , .update:hover {
+    box-shadow: 0 2px 6px rgba(0, 123, 255, 0.25);
+}
+
+textarea {
+    resize: none;
+    height: 100%;
+    background-color: #f9fafb;
+}
+
+input, textarea {
+    border: 1px solid #edeef1;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+.form-control, selectm option {
+    background-color: #f9fafb;
+}
+
+.form-control:focus,
+textarea:focus {
+    box-shadow: 0 0 3px 1px var(--span-color);
+}
+
+.the-form {
+    position: fixed;
+    left: 50%;
+    right: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: -2;
+    height: 70%;
+}
+
+.layOut {
+    position: fixed;
+    background-color: rgba(108, 113, 125, 0.5);
+    backdrop-filter: blur(10px);
+    inset: 0;
+    opacity: 0;
+    z-index: -10;
+}
+
+.theContant {
+    background-color: #f8fafc;
+    /* min-height: calc(100vh - 69.3px); */
+}
+
+.box-shadow-boxes {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.box-shadow-boxes:hover {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+}
+
+.box-shadow-allContact {
+    box-shadow: 0 2px 6px var(--blue0color);
+}
+
+.box-shadow-star {
+    box-shadow: 0 2px 6px var(--starColor);
+}
+
+.box-shadow-heart {
+    box-shadow: 0 2px 6px var(--heartColor);
+}
+
+input[type=search]:focus {
+    border-color: transparent;
+    outline: none;
+}
+
+input[type=search] {
+    border: none;
+    background-color: transparent;
+    width: 100%;
+}
+
+
+.fa-magnifying-glass {
+    color: #99a1af;
+}
+
+.heart-icone,
+.star-icone {
+    position: relative;
+}
+
+.heart-icone::before {
+    content: "\f21e";
+    font-family: "Font Awesome 6 Free";
+    position: absolute;
+    font-weight: 900;
+    font-size: 9px;
+    background-color: #ff2056;
+    color: white;
+    padding: 3px 6px;
+    border: 2px solid white;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    top: 100%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+.star-icone::after {
+    content: "\f005";
+    font-family: "Font Awesome 6 Free";
+    position: absolute;
+    font-weight: 900;
+    font-size: 9px;
+    background-color: #ffb900;
+    color: white;
+    padding: 3px 6px;
+    border: 2px solid white;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    bottom: 100%;
+    left: 100%;
+    transform: translate(-50%, 50%);
+    -webkit-transform: translate(-50%, 50%);
+    -moz-transform: translate(-50%, 50%);
+    -ms-transform: translate(-50%, 50%);
+    -o-transform: translate(-50%, 50%);
+}
+
+/*=================================================================================================================*/
+.width-photo {
+    width: 48px;           
+    /* flex-shrink: 0;      */
+}
+
+.width-photo img {
+    width: 100%;
+    /* height: 48px; */
+    /* object-fit: cover; */
+}
+
+
+
+.fa-phone {
+    color: #1a61fc;
+    background-color: #dbeafe;
+}
+
+.fa-envelope {
+    color: #7f22fe;
+    background-color: #ede9fe;
+}
+
+.fa-location-dot {
+    color: #089c6a;
+    background-color: #d0fae5;
+}
+
+.heartemergencie {
+    background-color: #fff1f2;
+}
+
+.friend {
+    color: #089c6a;
+    background-color: #d0fae5;
+}
+
+.family {
+    color: #1a61fc;
+    background-color: #dbeafe;
+}
+
+.work {
+    color: #7f22fe;
+    background-color: #ede9fe;
+}
+
+.school {
+    color: #ca8555;
+    background-color: #fef3c6;
+}
+
+.other {
+    color: #384960;
+    background-color: #f3f4f6;
+}
+
+.hover-phone:hover {
+    background-color: #8bffc5;
+}
+
+.hover-mail:hover {
+    background-color: #c9bdfc;
+}
+
+i.fa-regular.fa-star:hover {
+    color: var(--starColor);
+    background-color: var(--inputs_color);
+}
+
+.heart_hover:hover {
+    background-color: #fab2b7;
+
+}
+
+.fa-pen:hover {
+    color: #1a61fc;
+    background-color: #dbeafe;
+}
+
+.fa-trash:hover {
+    background-color: #fab2b7;
+    color: var(--heartColor);
+}
+
+.bg-dark-red {
+    background-color: #dc2626;
+}
+
+.bg-dark-gray {
+    background-color: #6b7280;
+}
+.bg-dark-red:hover {
+    background-color: #bb2121;
+}
+
+.bg-dark-gray:hover {
+    background-color: #4e535d;
+}
+
+.exclamation-color {
+    color: #f8bb86;
+}
+
+.layOutDeleted {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 2;
+}
+
+.added-correctlly {
+    display: none;
+}
+
+.delete {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+    -webkit-transform: translate(-50%, -50%) scale(0);
+    -moz-transform: translate(-50%, -50%) scale(0);
+    -ms-transform: translate(-50%, -50%) scale(0);
+    -o-transform: translate(-50%, -50%) scale(0);
+}
+
+.fa-circle-exclamation {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+}
+
+.bg-white-red {
+    background-color: #fff8ec;
+}
+
+.friend-phone:hover i:last-child {
+    color: white;
+    background-color: #089c6a;
+}
+
+.dark-red {
+    background-color: #ed0025;
+}
+
+.emerg-phone {
+    color: #ed0025;
+    background-color: #ffe4e6;
+}
+
+.emerg-section:hover i:last-child {
+    color: white;
+    background-color: #ed0025;
+}
+
+.no-contacts {
+    color: #d1d5dc;
+    background-color: #f3f4f6;
+}
+
+.no-contacts-logo {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    -webkit-transform: translate(-50%, 50%);
+    -moz-transform: translate(-50%, 50%);
+    -ms-transform: translate(-50%, 50%);
+    -o-transform: translate(-50%, 50%);
+}
+
+.lite-parag {
+    color: #aab1bd;
+}
+
+.correct {
+    color: #089c6a;
+}

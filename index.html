@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/notes-logo-modified.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/indexResponsive.css">
+    <title>ContactHub - Smart Contact Manager</title>
+</head>
+<body>
+    <div class="">
+        <div class="layOut"></div>
+        <div class="layOutDeleted"></div>
+        <nav class=" nav-bg-color border-bottom p-2"> 
+            <div class="container d-flex align-items-center justify-content-between">
+                <div class="left-part d-flex align-items-center gap-2">
+                    <i class="fa-solid fa-address-book fs-4 bg-blue text-white p-2 rounded-3"></i>
+        
+                    <div class="lh-sm">
+                        <p class="mb-0 fw-bold fs-3">
+                            Contact<span class="sp-color">Hub</span>
+                        </p>
+                        <small class="gray-head fw-bold d-sm-none d-md-block d-none-small">Smart Contact Manager</small>
+                    </div>
+                </div>
+        
+                <div class="right-part d-flex align-items-center justify-content-end">
+                    <div class="adding add-update d-flex align-items-center bg-blue text-white p-2 rounded-3 pointer ms-4 add-button-effect"><i class="fa-solid fa-plus"></i> <p class="mb-0 ms-3 text-capitalize">add <span class="d-sm-none d-md-inline d-none-small">content</span></p> </div>
+                    <i class="fa-solid fa-bell gray-head fw-bold d-sm-none d-md-block d-none-small ms-4 pointer bg-hover p-2 rounded-2"></i>
+                    <i class="fa-solid fa-gear gray-head fw-bold d-sm-none d-md-block d-none-small ms-4 pointer bg-hover p-2 rounded-2"></i>
+                    <img src="./images/avatar-4.jpg" class="img-3 rounded-3 ms-4" alt="">
+                </div>
+            </div>
+        </nav>
+        
+        <form class="the-form bg-white rounded-3 p-2 overflow-y-auto overflow-auto row g-3 col-sm-12 col-md-4 mx-auto ">
+
+            <div class="title d-flex justify-content-between align-items-center border-bottom pb-3">
+                <p class="mb-0 fs-4 text-capitalize fw-bold">add new contect</p>
+                <button class="close-btn fs-4 gray-head pointer bg-hover rounded-2 px-2 py-0"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <div class="user-photo">
+                <div class="w-100 text-center avatar">
+                    <img id="add-photo" class="w-25 " src="./images/user.png" alt="">
+                </div>
+
+                <div  class="customeInput text-center mt-2 p-2 rounded-2 w-fit mx-auto bg-color-cam">
+                    <input class="filesPhoto" type="file" name="" id="photo" hidden>
+                    <label for="photo" class="pointer">
+                        <i class="fa-solid fa-camera gray-head"></i>
+                        <span class="">Change photo</span>
+                    </label>
+                </div>
+
+            </div>
+
+            <div class="col-md-12 text-start">
+                <label for="inputEmail4" class="form-label text-capitalize ">full name <span class="heart-color">*</span></label>
+                <input type="text" class="form-control userName" id="inputEmail4" placeholder="Enter full name">
+                <p class="heart-color d-none name-warning">Name should contain only letters and spaces (2-50 characters)</p>
+            </div>
+            <div class="col-md-12 text-start">
+                <label for="inputPassword4" class="form-label text-capitalize">phone number <span class="heart-color">*</span></label>
+                <input type="text" class="form-control phoneNumber" id="inputPassword4" placeholder="e.g., 01012345678">
+                <p class="heart-color d-none phone-warning">Please enter a valid Egyptian phone number</p>
+            </div>
+            <div class="col-12 text-start">
+                <label for="inputAddress" class="form-label text-capitalize">email address</label>
+                <input type="text" class="form-control e-adress" id="inputAddress" placeholder="name@example.com">
+                <p class="heart-color d-none mail-warning">Please enter a valid email address</p>
+            </div>
+            <div class="col-12 text-start">
+                <label for="inputAddress2" class="form-label">Address</label>
+                <input type="text" class="form-control stree-adress" id="inputAddress2" placeholder="Enter Address">
+            </div>
+
+            <div class="col-md-12 text-start">
+                <label for="inputState" class="form-label">Group</label>
+                <select id="inputState" class="form-select">
+                    <option class="text-capitalize" selected>Select group</option>
+                    <option value="family" class="text-capitalize">familly</option>
+                    <option value="friend" class="text-capitalize">friends</option>
+                    <option value="work" class="text-capitalize">work</option>
+                    <option value="school" class="text-capitalize">school</option>
+                    <option value="other" class="text-capitalize">other</option>
+                </select>
+            </div>
+
+            <div class="mb-4 text-start">
+                <label for="floatingTextarea">Notes</label>
+                <textarea class="col-12 p-2 rounded-2 text-area" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+            </div>
+
+            <div class="d-flex">
+                <div class="col-6 text-start">
+                    <div class="form-check">
+                    <input class="form-check-input favorite non-check" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                        <i class="fa-solid fa-star star-color"></i> <span class="text-capitalize">favorite</span>
+                    </label>
+                    </div>
+                </div>
+    
+    
+                <div class="col-6 text-start">
+                    <div class="form-check">
+                    <input class="form-check-input emergancy non-check" type="checkbox" id="gridCheck2">
+                    <label class="form-check-label" for="gridCheck2">
+                        <i class="fa-solid fa-heart-pulse heart-color"></i> <span class="text-capitalize">emergancy</span>
+                    </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row gap-3 ">
+                <button type="" class="d-sm-block col-sm12 mt-3 d-md-inline col-md-5 close-btn cancel p-1 rounded-3">Cancel</button>
+                <button type="" class="d-none col-sm-12 mt-3 col-md-5 close-btn save text-white p-1 rounded-3"><i class="fa-solid fa-check"></i> Save Contact</button>
+                <button type="" class="d-none col-sm-12 mt-3 col-md-5 close-btn update text-white p-1 rounded-3"><i class="fa-solid fa-check"></i> Update Contact</button>
+            </div>
+        </form>
+
+        <section class="theContant">
+            <div class="parentNumbers container d-flex justify-content-between flex-wrap pt-4">
+
+                <div class="d-flex align-items-center gap-3 bg-white p-3 rounded-4 col-lg-3 col-12 mt-3 box-shadow-boxes ">
+                    <i class="fa-solid fa-users fs-6 bg-blue text-white p-3 rounded-3 box-shadow-allContact"></i>
+                    <div>
+                        <p class="mb-0 text-uppercase gray-head">total</p>
+                        <p class="total-number mb-0 fw-bold fs-3">1</p>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center gap-3 bg-white p-3 rounded-4 col-lg-3 col-12 mt-3 box-shadow-boxes">
+                    <i class="fa-solid fa-star fs-6 bg-star text-white p-3 rounded-3 box-shadow-star"></i>
+                    <div>
+                        <p class="mb-0 text-uppercase gray-head">favorites</p>
+                        <p class="total-favorites-num mb-0 fw-bold fs-3">1</p>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center gap-3 bg-white p-3 rounded-4 col-lg-3 col-12 mt-3 box-shadow-boxes">
+                    <i class="fa-solid fa-heart-pulse fs-6 bg-heart text-white p-3 rounded-3 box-shadow-heart"></i>
+                    <div>
+                        <p class="mb-0 text-uppercase gray-head">emergency</p>
+                        <p class="total-emergency-num mb-0 fw-bold fs-3">1</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="bottom-section container">
+                <div class="left-section mt-4">
+
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="p-3 col-lg-8 col-12">
+                                <div>
+                                    <div class="my-4">
+                                        <p class="mb-0 fw-bold fs-2 text-capitalize">all content</p>
+                                        <p class="mb-0 gray-head">Manage and organize your <span class="contacts-number">1</span>  contacts</p>
+                                    </div>
+                
+                                    <div class="">
+                                        <div class="d-flex align-items-center bg-white p-2 rounded-3 search box-shadow-boxes">
+                                            <i class="fa-solid fa-magnifying-glass"></i><input oninput="search()" type="search" class="ms-3 userName bg-white searchField" id="inputEmail4" placeholder="Search by name, phonem or email...">
+                                        </div>
+                                        
+                                        <div class="container-fluid">
+                                            <div class="row content-notes">
+
+                                                <div class="text-center no-contacts-logo d-none">
+                                                    <i class="fa-solid fa-address-book fs-1 no-contacts p-3 rounded-2"></i>
+                                                    <p class="mb-0 gray-head text-capitalize my-3">no contacts found</p>
+                                                    <p class="mb-0 lite-parag text-capitalize">click "add contact" to get started</p>
+                                                </div>
+                                            </div>
+                    
+                                            <div class="w-25 text-center bg-white p-3 delete delete-mobile">
+                                                <i class="fa-solid fa-circle-exclamation exclamation-color fs-1"></i>
+                                                <p class="mb-0 gray-head text-capitalize mb-3 fw-bold fs-3">delete contact?</p>
+                                                <p class="mb-0 gray-head text-capitalize mb-3">are you sure you want to delete asd? This action cannot be undone.</p>
+                                                <div class="text-center">
+                                                    <button class="border-0 rounded-3 text-white bg-dark-red p-2 fs-5 text-capitalize confirm-cancel">yes, delete it</button>
+                                                    <button class="border-0 rounded-3 text-white bg-dark-gray p-2 fs-5 text-capitalize close-delete">cancel</button>
+                                                </div>
+                                            </div>
+
+                                                <div class="text-center added-correctlly bg-white rounded-3 p-3 w-fit">
+                                                    <i class="fa-solid fa-circle-check correct fs-1 p-3 rounded-2"></i>
+                                                    <p class="mb-0 fw-bold fs-5 text-capitalize my-3">new contact added</p>
+                                                    <p class="mb-0 gray-head text-capitalize">contacts hs been added successfully</p>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="p-3 col-lg-4 col-12">
+                                <div class="right-part-emerg-fav">
+                                    <div class="bg-white rounded-3 my-2 box-shadow-boxes">
+                                        <div class="favorite-content p-3 d-flex align-items-center gap-3 bg-white-red border-bottom pb-3">
+                                            <i class="fa-solid fa-star fs-6 bg-star text-white p-3 rounded-3 box-shadow-star"></i>
+                                            <div>
+                                                <p class="mb-0 fw-bold text-capitalize">favorite</p>
+                                                <p class="mb-0 gray-head text-capitalize">quick access to starred contacts</p>
+                                            </div>
+                                        </div>
+            
+                                        <div class="fav-section">
+
+                                        </div>
+                                    </div>
+
+                                    
+                                    <div class="bg-white rounded-3 my-2 box-shadow-boxes">
+                                        <div class="favorite-content p-3 d-flex align-items-center gap-3 bg-white-red border-bottom pb-3">
+                                            <i class="fa-solid fa-heart-pulse fs-6 dark-red text-white p-3 rounded-3 box-shadow-heart"></i>
+                                            <div>
+                                                <p class="mb-0 fw-bold text-capitalize">emergancie</p>
+                                                <p class="mb-0 gray-head text-capitalize">Important contacts for urgent calls</p>
+                                            </div>
+                                        </div>
+            
+                                        <div class="section-emer">
+                                            <div class="top-section p-3 d-flex align-items-center justify-content-between pointer my-3 emerg-section">
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>
