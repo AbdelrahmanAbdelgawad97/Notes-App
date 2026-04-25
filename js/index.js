@@ -281,8 +281,6 @@ function remove(num) {
         window.localStorage.setItem("notes", JSON.stringify(contactsList));
         displayNotes();
     }
-
-
 }
 
 function search() 
