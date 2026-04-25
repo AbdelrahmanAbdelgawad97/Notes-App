@@ -161,7 +161,7 @@ function displayNotes()
                             <div class="middle-section">
                                 <div class=" d-flex align-items-center mt-3">
                                     <i class="fa-solid fa-envelope p-2 rounded-2"></i>
-                                    <p class="email-address mb-0 ms-4 gray-head">${contactsList[i].eAddress}</p>
+                                    <p class="email-address mb-0 ms-4 gray-head">${contactsList[i].eAddress.length > 15 ? contactsList[i].eAddress.slice(0, 15) + "..."  : contactsList[i].eAddress}</p>
                                 </div>
                                 <div class=" d-flex align-items-center mt-3">
                                     <i class="fa-solid fa-location-dot p-2 rounded-2"></i>
