@@ -145,7 +145,7 @@ textarea:focus {
     outline: none;
 }
 
-.form-control, selectm option {
+.form-control, select option {
     background-color: #f9fafb;
 }
 

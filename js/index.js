@@ -11,16 +11,22 @@ var notesBody = document.querySelector(".text-area");
 var contentNotes = document.querySelector(".content-notes");
 var searchField = document.querySelector(".searchField");
 
+var nameFlagError = false
+var emailFlagError = false
+var phoneFlagError = false
+
 var sortName = document.querySelector(".shortName");
 var personPhoto = document.querySelector(".person-photo");
 var userFullName = document.querySelector(".user-full-name");
 var notedPhoneNumber = document.querySelector(".note-phone-number");
 var noteEmailAdddress = document.querySelector(".email-address");
 var notePhysicalAdddress = document.querySelector(".physical-address");
-var updateContact = document.querySelector(".edit-contact");
+// var updateContact = document.querySelector(".edit-contact");
 var trash = document.querySelector(".fa-trash");
 var closeDelete = document.querySelector(".close-delete");
 var noContactLogo = document.querySelector(".no-contacts-logo");
+
+var errorMessages = []
 
 var favorit = false;
 document.querySelector(".favorite").addEventListener("click",function(){
@@ -90,24 +96,21 @@ if(contactsList.length === 0)
 function addContacts() 
 {
 
-
-    // if(validation(userName.value, email.value, phoneNumber.value)) 
-    // {
-        contactsList.unshift({
-            image: filePhoto.files.length === 0 ? "" : filePhoto.files[0].name,
-            fullName: userName.value,
-            pNumber: phoneNumber.value,
-            eAddress: email.value,
-            physicalAdres: streetAdrees.value,
-            group: formSelection.value,
-            notes: notesBody.value,
-            fav: favorit,
-            emer: emergancy,
-        });
+            contactsList.unshift({
+                image: filePhoto.files.length === 0 ? "" : filePhoto.files[0].name,
+                fullName: userName.value,
+                pNumber: phoneNumber.value,
+                eAddress: email.value,
+                physicalAdres: streetAdrees.value,
+                group: formSelection.value,
+                notes: notesBody.value,
+                fav: favorit,
+                emer: emergancy,
+            });
         
         window.localStorage.setItem("notes", JSON.stringify(contactsList));
         clearInputs();
-    // }
+    
 
 }
 
@@ -429,7 +432,6 @@ function updateNotes() {
         displayNotes();
         clearInputs();
 
-        console.log("Image updated correctly ✅");
     };
 }
 
@@ -455,36 +457,43 @@ function changeemergancy(id)
     displayNotes();
 }
 
-// function validation(name,email,phoneNumber) 
-// {
-//     var testName = /^[A-Za-z0-9._-]{3,50}$/;
-//     var testEmail = /^[A-Za-z0-9._-]{3,30}@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
-//     var testPhone =/^01[0125]\d{8}$/;
+function validation(name, email, phoneNumber) 
+{
+    const testName = /^[A-Za-z0-9._-]{3,50}$/;
+    const testPhone = /^01[0125][0-9]{8}$/;
+    const testEmail = /^[A-Za-z0-9._-]{3,30}@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
 
-//     if(!testName.test(name))
-//     {
-//         document.querySelector(".name-warning").classList.remove("d-none");      
-//         console.log("error");
-//         return false; 
-//     }
-    
-//     if(!testEmail.test(email))
-//     {
-//         document.querySelector(".mail-warning").classList.remove("d-none");      
-//         console.log("error");
-//         return false; 
-//     }
-    
-//     if(!testPhone.test(phoneNumber))
-//     {
-//         document.querySelector(".phone-warning").classList.remove("d-none");      
-//         console.log("error");
-//         return false; 
-//     }
+    let nameFlagError = false;
+    let emailFlagError = false;
+    let phoneFlagError = false;
 
-    
-//     return true;
-// }
+    // Name
+    if (!testName.test(name)) {
+        document.querySelector(".name-warning").classList.remove("d-none");
+        nameFlagError = true;
+    } else {
+        document.querySelector(".name-warning").classList.add("d-none");
+    }
+
+    // Email
+    if (!testEmail.test(email)) {
+        document.querySelector(".mail-warning").classList.remove("d-none");
+        emailFlagError = true;
+    } else {
+        document.querySelector(".mail-warning").classList.add("d-none");
+    }
+
+    // Phone
+    if (!testPhone.test(phoneNumber)) {
+        document.querySelector(".phone-warning").classList.remove("d-none");
+        phoneFlagError = true;
+    } else {
+        document.querySelector(".phone-warning").classList.add("d-none");
+    }
+
+    return !(nameFlagError || emailFlagError || phoneFlagError);
+}
+
 
 
 /* ============================================================ End Adding Contact */
@@ -515,9 +524,14 @@ addProduct.addEventListener("click",function(){
 });
 
 save.addEventListener("click",function(){
-    // if (validation(userName.value, email.value, phoneNumber.value)) {
+
+    if(validation(userName.value , email.value , phoneNumber.value)) {
         addContacts();
-    // }
+        cancelShowList();
+        displayNotes();
+    }
+
+
 });
 
 
@@ -548,8 +562,13 @@ closePage.addEventListener("click",function(){
     cancelShowList ();
 });
 
-updateContact.addEventListener("click",function(){
-    addUpdateShowList();
+update.addEventListener("click",function(){
+    // if(validation(userName.value , email.value , phoneNumber.value)) {
+        addUpdateShowList();
+        cancelShowList();
+        displayNotes();
+    // }
+
 });
 
 function clearInputs() 
